@@ -1,0 +1,47 @@
+@font-face {
+  font-family: MyFonts;
+  src: url(DB\ HELVETHAICA\ X\ MED\ V3.2.TTF);
+}
+
+.LoginPage {
+  position: absolute;
+  background-image: url(./bg.png) !important;
+  background-repeat: no-repeat;
+  width: 1920px;
+  height: 100vh;
+  background-size: 100% 100%;
+  overflow: auto;
+  -ms-overflow-style: none;
+}
+
+.container-btn {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding-right: 50px;
+}
+.button {
+  font-family: MyFonts;
+  background-image: url(./btn.png);
+  height: 85px;
+  width: 309px;
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  opacity: 0.9;
+  margin-left: 84px;
+  margin-top: 85px;
+  color: white;
+  font-size: 30px;
+  font-weight: normal;
+  letter-spacing: 6px;
+}
+.container-logo {
+  padding-top: 90px;
+  padding-right: 70px;
+  display: flex;
+  justify-content: center;
+}

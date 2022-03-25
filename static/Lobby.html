@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+    />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      body,
+      html {
+        min-height: 100%;
+        width: 100%;
+        margin: 0;
+      }
+      .container-nav {
+        background-color: white;
+        align-items: center;
+        display: flex;
+        width: 100%;
+        /* position: absolute; */
+        justify-content: space-between;
+        padding: 17px;
+        top: 0;
+        z-index: 1;
+      }
+      .bi {
+        font-size: 23px;
+      }
+      .dropdown-item {
+        font-family: FontsLi;
+      }
+      .btn:focus {
+        border-bottom: 1px rgb(30, 151, 199);
+      }
+      .btn-auditorium {
+        top: 57%;
+        left: 48.7%;
+        width: 9%;
+        height: 23%;
+      }
+      .btn-exhibitHall {
+        top: 57%;
+        left: 30.7%;
+        width: 9.3%;
+        height: 21%;
+      }
+      .btn-exhibitNetwork {
+        top: 57%;
+        left: 68.3%;
+        width: 10.8%;
+        height: 26%;
+      }
+      .btn-information {
+        top: 68%;
+        left: 6%;
+        width: 15%;
+        height: 10%;
+      }
+      .btn-video {
+        background-color: transparent;
+        top: 29.5%;
+        left: 10.2%;
+        width: 22%;
+        height: 22.4%;
+      }
+      iframe {
+        min-width: 100%;
+        min-height: 100%;
+      }
+      .container-menu {
+        justify-content: flex-end;
+        top: 50%;
+        right: 0;
+        width: 100%;
+        min-height: 25%;
+      }
+      .container-menu button {
+        width: 10%;
+        height: 5%;
+      }
+      .modal-dialog-scrollable .modal-content {
+        overflow: unset;
+      }
+      .btn {
+        background-color: white;
+        color: grey;
+        font-family: MyFonts;
+        font-size: 23px;
+        border: 0;
+        border-radius: 0;
+      }
+      .btn:hover {
+        background-color: unset;
+        color: rgb(101, 200, 208);
+        transform: translateY(-5px);
+        border-bottom: 2px solid rgb(101, 200, 208);
+        transition: all 0.3s;
+      }
+      .btn:focus {
+        outline: unset;
+      }
+      .dropdown-item {
+        font-family: MyFonts;
+        font-size: 20px;
+        color: grey;
+      }
+      #dropdownMenuButton1 {
+        display: none;
+      }
+      #hide1 {
+        display: none;
+      }
+      .modal-body {
+        padding: 0;
+        font-family: MyFonts;
+      }
+      .modal-body button {
+        color: white;
+        padding-left: 58px;
+        font-size: 20px;
+      }
+      .row {
+        margin-bottom: 50px;
+      }
+      @font-face {
+        font-family: FontsLi;
+        src: url("fonts/DB\ HELVETHAICA\ X\ LI\ V3.2.TTF");
+      }
+      @font-face {
+        font-family: MyFonts;
+        src: url("fonts/DB\ HELVETHAICA\ X\ MED\ V3.2.TTF") format("truetype");
+      }
+      @media (max-width: 1000px) {
+        iframe {
+          width: 468px !important;
+          height: 315px !important;
+        }
+        @media (max-width: 712px) {
+          .btn {
+            font-size: 19px;
+          }
+          #hide {
+            display: none;
+          }
+
+          #dropdownMenuButton1 {
+            display: flex;
+          }
+        }
+        @media (min-width: 713px) and (max-width: 999px) {
+          .btn {
+            font-size: 20px;
+          }
+          #hide {
+            display: none;
+          }
+          #dropdownMenuButton1 {
+            display: flex;
+          }
+        }
+      }
+      @media (max-width: 712px) {
+        .btn {
+          font-size: 19px;
+        }
+        #hide {
+          display: none;
+        }
+        #hide1 {
+          display: flex;
+        }
+      }
+      @media (max-width: 991px) {
+        .row {
+          margin: 0;
+        }
+      }
+      @media (max-width: 1200px) and (min-width: 992px) {
+        .h1 {
+          top: 53px !important;
+          right: 97px !important;
+        }
+        .h2 {
+          top: 53px !important;
+          right: -4px !important;
+        }
+        .h3 {
+          top: 53px !important;
+          right: 97px !important;
+        }
+        .h4 {
+          top: 53px !important;
+          right: -4px !important;
+        }
+        .h5 {
+          top: 53px !important;
+          right: 63px !important;
+        }
+        .h6 {
+          top: 53px !important;
+          right: -4px !important;
+        }
+        .h7 {
+          top: 53px !important;
+          right: -26px !important;
+        }
+        .h8 {
+          top: 53px !important;
+          right: -4px !important;
+        }
+        .h9 {
+          top: 53px !important;
+          right: -26px !important;
+        }
+        .h10 {
+          top: 53px !important;
+          right: -4px !important;
+        }
+        .row {
+          margin-bottom: 80px;
+        }
+      }
+      .col {
+        width: 275px;
+      }
+
+      .trigger {
+        position: relative;
+      }
+      .hidden {
+        display: none;
+        position: absolute;
+      }
+      .trigger:focus .hidden {
+        display: flex;
+      }
+    </style>
+  </head>
+  <body>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <div class="container-nav">
+      <img style="width: 18.6%; padding-left: 2%" src="img/logo.png" />
+      <img style="width: 20%" src="img/Logo11st.png" />
+
+      <div
+        style="align-items: center; padding-right: 3%"
+        class="btn-group"
+        role="group"
+        aria-label="Basic radio toggle button group"
+      >
+        <a href="Landing.html">
+          <button type="button" class="btn">HOME</button>
+        </a>
+        <a href="About.html">
+          <button type="button" class="btn">ABOUT</button>
+        </a>
+        <a href="Agenda.html">
+          <button id="hide" type="button" class="btn">AGENDA</button>
+        </a>
+        <a href="Lobby.html">
+          <button id="hide" type="button" class="btn">LOBBY</button>
+        </a>
+        <a href="Survey.html">
+          <button id="hide" type="button" class="btn">SURVEY</button>
+        </a>
+        <a href="Contact.html">
+          <button id="hide" type="button" class="btn">CONTACT US</button>
+        </a>
+        <button
+          class="btn btn-secondary dropdown-toggle"
+          type="button"
+          id="dropdownMenuButton1"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        ></button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a href="Agenda.html" class="dropdown-item">AGENDA</a>
+          <a class="dropdown-item" href="Lobby.html">LOBBY</a>
+          <a href="Survey.html" class="dropdown-item">SURVEY</a>
+          <a href="Contact.html" class="dropdown-item">CONTACT US</a>
+        </div>
+      </div>
+    </div>
+    <div
+      class="embed-responsive embed-responsive-16by9 position-relative"
+      id="view3d"
+    >
+      <img src="img/Lobby1.png.jpg" style="width: 100%" />
+      <img
+        src="img/Panorama_4 hires.jpg"
+        style="position: absolute;left: -23%;height: 100%;"
+      />
+      <a href="Seminar.html">
+        <button
+          class="btn-auditorium"
+          style="position: absolute; background-color: transparent; border: 0"
+        >
+          <img src="img/MORAL_HP_ICON.gif" style="width: 40%" />
+        </button>
+      </a>
+      <button
+        role="button"
+        data-bs-toggle="modal"
+        data-bs-target="#InformationModal"
+        class="btn-information"
+        style="position: absolute; background-color: transparent; border: 0"
+      >
+        <img src="img/MORAL_HP_ICON.gif" style="width: 30%" />
+      </button>
+      <a href="ExhibitionMain.html">
+        <button
+          class="btn-exhibitHall"
+          style="position: absolute; background-color: transparent; border: 0"
+        >
+          <img src="img/MORAL_HP_ICON.gif" style="width: 40%" />
+        </button>
+      </a>
+      <a href="ExhibitionNetwork.html">
+        <button
+          class="btn-exhibitNetwork"
+          style="position: absolute; background-color: transparent; border: 0"
+        >
+          <img src="img/MORAL_HP_ICON.gif" style="width: 40%" />
+        </button>
+      </a>
+      <button
+        role="button"
+        data-bs-toggle="modal"
+        data-bs-target="#VideoModal"
+        class="btn-video"
+        style="position: absolute; border: 0"
+      >
+        <video class="video w-100" autoplay="1" loop muted="1">
+          <source
+            src="https://sh.protoysmaker.com/DEMO/Moral/Video/Info10.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </video>
+      </button>
+      <div
+        class="modal fade"
+        id="InformationModal"
+        tabindex="-1"
+        aria-labelledby="videoModalLabel"
+        aria-hidden="true"
+      >
+        <div
+          class="
+            modal-dialog modal-xl modal-dialog-scrollable modal-dialog-centered
+          "
+        >
+          <div class="modal-content">
+            <button
+              data-bs-dismiss="modal"
+              style="
+                position: absolute;
+                top: -12px;
+                right: -17px;
+                border: 0;
+                z-index: 9;
+                background-color: transparent;
+              "
+            >
+              <img src="img/btn-exit.png" />
+            </button>
+            <div class="modal-body">
+              <div
+                style="
+                  background-image: url(img/Info-lobby/Heder.png);
+                  background-size: cover;
+                  object-fit: cover;
+                  width: 380px;
+                  height: 160px;
+                  padding: 29px 56px;
+                  margin-top: 10px;
+                  font-size: 28px;
+                  color: rgb(241, 90, 36);
+                "
+              >
+                ต้องการสอบถามข้อมูลเรื่องใดคะ?
+              </div>
+              <div class="container-info">
+                <div class="row">
+                  <div class="col">
+                    <button
+                      class="trigger"
+                      style="
+                        background-image: url(img/Info-lobby/1.png);
+                        background-size: cover;
+                        background-color: transparent;
+                        width: 260px;
+                        height: 57px;
+                        border: 0;
+                      "
+                    >
+                      ชมนิทรรศการส่วนกลาง
+                      <img
+                        style="top: -12px; right: -148px"
+                        class="hidden h1"
+                        height="90px"
+                        src="img/Info-lobby/A1.png"
+                      />
+                    </button>
+                  </div>
+                  <div class="col"></div>
+                  <div class="col">
+                    <button
+                      class="trigger"
+                      style="
+                        background-image: url(img/Info-lobby/5.png);
+                        background-size: cover;
+                        background-color: transparent;
+                        width: 260px;
+                        height: 57px;
+                        border: 0;
+                      "
+                    >
+                      ห้องย่อย 3 ไปทางไหน
+                      <img
+                        style="right: -309px; top: -15px"
+                        class="hidden h2"
+                        height="90px"
+                        src="img/Info-lobby/A7.png"
+                      />
+                    </button>
+                  </div>
+                  <div class="col"></div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <button
+                      class="trigger"
+                      style="
+                        background-image: url(img/Info-lobby/2.png);
+                        background-size: cover;
+                        background-color: transparent;
+                        width: 260px;
+                        height: 57px;
+                        border: 0;
+                        padding-left: 80px;
+                      "
+                    >
+                      ชมนิทรรศการส่วนเครือข่าย
+                      <img
+                        style="top: -10px; right: -143px"
+                        class="hidden h3"
+                        height="90px"
+                        src="img/Info-lobby/A2.png"
+                      />
+                    </button>
+                  </div>
+                  <div class="col"></div>
+                  <div class="col">
+                    <button
+                      class="trigger"
+                      style="
+                        background-image: url(img/Info-lobby/1.png);
+                        background-size: cover;
+                        background-color: transparent;
+                        width: 260px;
+                        height: 57px;
+                        border: 0;
+                      "
+                    >
+                      ห้องย่อย 4 ไปทางไหน
+                      <img
+                        style="right: -309px; top: -15px"
+                        class="hidden h4"
+                        height="90px"
+                        src="img/Info-lobby/A8.png"
+                      />
+                    </button>
+                  </div>
+                  <div class="col"></div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <button
+                      class="trigger"
+                      style="
+                        background-image: url(img/Info-lobby/3.png);
+                        background-size: cover;
+                        background-color: transparent;
+                        width: 260px;
+                        height: 57px;
+                        border: 0;
+                      "
+                    >
+                      ห้องประชุม ไปทางไหน
+                      <img
+                        class="hidden h5"
+                        style="right: -180px; top: -16px"
+                        height="90px"
+                        src="img/Info-lobby/A3.png"
+                      />
+                    </button>
+                  </div>
+                  <div class="col"></div>
+                  <div class="col">
+                    <button
+                      class="trigger"
+                      style="
+                        background-image: url(img/Info-lobby/2.png);
+                        background-size: cover;
+                        background-color: transparent;
+                        width: 260px;
+                        height: 57px;
+                        border: 0;
+                      "
+                    >
+                      ห้องย่อย 5 ไปทางไหน
+                      <img
+                        style="right: -309px; top: -15px"
+                        class="hidden h6"
+                        height="90px"
+                        src="img/Info-lobby/A9.png"
+                      />
+                    </button>
+                  </div>
+                  <div class="col"></div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <button
+                      class="trigger"
+                      style="
+                        background-image: url(img/Info-lobby/4.png);
+                        background-size: cover;
+                        background-color: transparent;
+                        width: 260px;
+                        height: 57px;
+                        border: 0;
+                      "
+                    >
+                      ห้องย่อย 1 ไปทางไหน
+                      <img
+                        style="right: -285px; top: -6px"
+                        class="hidden h7"
+                        height="85px"
+                        src="img/Info-lobby/A4.png"
+                      />
+                    </button>
+                  </div>
+                  <div class="col"></div>
+                  <div class="col">
+                    <button
+                      class="trigger"
+                      style="
+                        background-image: url(img/Info-lobby/3.png);
+                        background-size: cover;
+                        background-color: transparent;
+                        width: 260px;
+                        height: 57px;
+                        border: 0;
+                      "
+                    >
+                      ห้องย่อย 6 ไปทางไหน
+                      <img
+                        style="right: -309px; top: -15px"
+                        class="hidden h8"
+                        height="85px"
+                        src="img/Info-lobby/A10.png"
+                      />
+                    </button>
+                  </div>
+                  <div class="col"></div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <button
+                      class="trigger"
+                      style="
+                        background-image: url(img/Info-lobby/5.png);
+                        background-size: cover;
+                        background-color: transparent;
+                        width: 260px;
+                        height: 57px;
+                        border: 0;
+                      "
+                    >
+                      ห้องย่อย 2 ไปทางไหน
+                      <img
+                        style="right: -285px; top: -6px"
+                        class="hidden h9"
+                        height="85px"
+                        src="img/Info-lobby/A5.png"
+                      />
+                    </button>
+                  </div>
+                  <div class="col"></div>
+                  <div class="col">
+                    <button
+                      class="trigger"
+                      style="
+                        background-image: url(img/Info-lobby/4.png);
+                        background-size: cover;
+                        background-color: transparent;
+                        width: 260px;
+                        height: 57px;
+                        border: 0;
+                      "
+                    >
+                      ชมกำหนดการแต่ละห้อง
+                      <img
+                        style="right: -309px; top: -15px"
+                        class="hidden h10"
+                        height="75px"
+                        src="img/Info-lobby/A11.png"
+                      />
+                    </button>
+                  </div>
+                  <div class="col"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="modal fade"
+        id="VideoModal"
+        tabindex="-1"
+        aria-labelledby="videoModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+          <div class="modal-content">
+            <button
+              data-bs-dismiss="modal"
+              style="
+                position: absolute;
+                top: -12px;
+                right: -17px;
+                border: 0;
+                z-index: 9;
+                background-color: transparent;
+              "
+            >
+              <img src="img/btn-exit.png" />
+            </button>
+            <div class="modal-body">
+              <iframe
+                width="560"
+                height="700"
+                src="https://www.youtube.com/embed/videoseries?list=PLFZMi7VB8robGfnL-q4ZYBEM1P9DTQVA7"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      /*const elem = document.getElementById("view3d");
+
+      console.log("initsensor");
+
+      window.addEventListener("deviceorientation", function(e) {
+        console.log("sensor");
+        elem.style.transform = `rotateZ(${-e.alpha}deg) rotateX(${-e.beta}deg) rotateY(${
+          e.gamma
+        }deg)`;
+      });*/
+    </script>
+  </body>
+</html>
