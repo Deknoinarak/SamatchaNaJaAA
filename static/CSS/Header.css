@@ -1,0 +1,30 @@
+.container-nav {
+  display: flex;
+  height: 120px;
+  align-items: center;
+}
+.btn-group {
+  position: absolute;
+  right: 0;
+  padding-right: 5px;
+}
+.btn {
+  font-family: MyFonts;
+  margin-right: 35px;
+  border: none;
+  font-size: 20px;
+  color: rgb(153, 153, 153);
+}
+.btn:hover {
+  background-color: unset;
+  color: rgb(153, 153, 153);
+}
+.btn:focus {
+  border-bottom: 2px solid rgb(101, 200, 208);
+  outline: none;
+  box-shadow: none;
+}
+@font-face {
+  font-family: MyFonts;
+  src: url(DB\ HELVETHAICA\ X\ MED\ V3.2.TTF);
+}
